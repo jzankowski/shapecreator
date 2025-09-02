@@ -8,7 +8,6 @@ import {
   Tab,
   Field,
   Body1Stronger,
-  Body2,
   Tooltip,
   tokens
 } from '@fluentui/react-components';

@@ -8,7 +8,6 @@ import {
   Tab,
   Field,
   Body1Stronger,
-  Body2,
   Tooltip,
   Tag,
   Avatar,
