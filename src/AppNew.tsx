@@ -414,14 +414,6 @@ const App: React.FC = () => {
             alignItems: 'center',
             gap: '12px'
           }}>
-            {/* Microsoft SVG Icon */}
-            <img 
-              src="/Microsoft.svg"
-              width="24" 
-              height="24" 
-              alt="Microsoft Logo"
-              style={{ flexShrink: 0 }}
-            />
             <Body1Stronger>Shape Creator</Body1Stronger>
           </div>
           
