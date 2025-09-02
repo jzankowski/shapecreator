@@ -1,0 +1,38 @@
+.App {
+  min-height: 100vh;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+}
+
+.App h1 {
+  font-size: 3rem;
+  color: #646cff;
+  margin: 0;
+}
+
+/* Full-screen layout styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Tab transition animation */
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Button hover state */
+.custom-brand-button:hover {
+  background-color: #571bd1 !important; /* brand700 from custom brand scale */
+  transition: background-color 0.2s ease;
+}
