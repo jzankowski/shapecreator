@@ -9,10 +9,10 @@ import {
   Field,
   Body1Stronger,
   Tooltip,
-  Tag,
-  Avatar,
   tokens
 } from '@fluentui/react-components';
+import './App.css';
+import { CustomTag } from './CustomTag';
 import './App.css';
 
 // BorderRadiusController class for managing border radius calculations
@@ -826,8 +826,10 @@ const App: React.FC = () => {
                 }}>
                   {/* Container around Tag with Level 3 styling */}
                   <div style={{
-                    paddingLeft: `${radiusController.padding * 2}px`,
-                    paddingRight: `${radiusController.padding * 2}px`,
+                    paddingLeft: `${radiusController.padding}px`,
+                    paddingRight: `${radiusController.padding}px`,
+                    paddingTop: `${radiusController.padding}px`,
+                    paddingBottom: `${radiusController.padding}px`,
                     height: `${radiusController.size}px`,
                     minHeight: `${radiusController.size}px`,
                     borderRadius: `${radiusController.radius}px`,
@@ -840,48 +842,36 @@ const App: React.FC = () => {
                     gap: '8px'
                   }}>
                     {/* Tag with Avatar */}
-                    <Tag 
+                    <CustomTag
+                      avatarName="Jalen Hurts"
+                      text="Jalen Hurts"
+                      containerHeight={radiusController.size}
+                      parentPadding={radiusController.padding}
+                      basePadding={radiusController.childPadding}
                       style={{
-                        paddingTop: `${radiusController.childPadding}px`,
-                        paddingBottom: `${radiusController.childPadding}px`,
-                        paddingLeft: `${radiusController.childPadding * 2}px`,
-                        paddingRight: `${radiusController.childPadding * 4}px`,
                         borderRadius: `${radiusController.calculateInnerRadius()}px`,
-                        fontSize: '16px',
-                        minHeight: '32px',
+                        fontSize: '16px'
                       }}
-                    >
-                      <Avatar 
-                        size={20}
-                        name="Jalen Hurts"
-                        style={{
-                          borderRadius: `${radiusController.calculateInnerContainerRadius()}px`
-                        }}
-                      />
-                      <span style={{ paddingLeft: '8px' }}>Jalen Hurts</span>
-                    </Tag>
+                      avatarStyle={{
+                        borderRadius: `${radiusController.calculateInnerContainerRadius()}px`
+                      }}
+                    />
                     
                     {/* Second Tag */}
-                    <Tag 
+                    <CustomTag
+                      avatarName="AJ Brown"
+                      text="AJ Brown"
+                      containerHeight={radiusController.size}
+                      parentPadding={radiusController.padding}
+                      basePadding={radiusController.childPadding}
                       style={{
-                        paddingTop: `${radiusController.childPadding}px`,
-                        paddingBottom: `${radiusController.childPadding}px`,
-                        paddingLeft: `${radiusController.childPadding * 2}px`,
-                        paddingRight: `${radiusController.childPadding * 4}px`,
                         borderRadius: `${radiusController.calculateInnerRadius()}px`,
-                        fontSize: '16px',
-                        minHeight: '32px',
+                        fontSize: '16px'
                       }}
-                    >
-                      <Avatar 
-                        size={20}
-                        name="AJ Brown"
-                        style={{
-                          borderRadius: `${radiusController.calculateInnerContainerRadius()}px`
-                        }}
-                      />
-                      <span style={{ paddingLeft: '8px' }}>AJ Brown</span>
-                    </Tag>
+                      avatarStyle={{
+                        borderRadius: `${radiusController.calculateInnerContainerRadius()}px`
+                      }}
+                    />
                   </div>
                   
                   <Button 

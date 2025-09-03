@@ -12,6 +12,17 @@
   margin: 0;
 }
 
+/* Dynamic height tag override */
+.dynamic-height-tag {
+  height: var(--tag-height) !important;
+  min-height: var(--tag-height) !important;
+  max-height: var(--tag-height) !important;
+  display: flex !important;
+  align-items: center !important;
+  box-sizing: border-box !important;
+  line-height: normal !important;
+}
+
 /* Full-screen layout styles */
 body, html {
   margin: 0;
