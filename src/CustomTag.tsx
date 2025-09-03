@@ -66,7 +66,7 @@ export const CustomTag: React.FC<CustomTagProps> = ({
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          backgroundColor: tokens.colorNeutralBackground5,
+          backgroundColor: tokens.colorNeutralBackground6,
           color: tokens.colorNeutralForeground1,
           borderRadius: '50%',
           fontSize: '12px',

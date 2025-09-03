@@ -152,6 +152,13 @@ class BorderRadiusController {
     return this.radius + this.outerPadding;
   }
 
+  // Calculate the Level 1 atomic element size
+  calculateAtomicElementSize(): number {
+    // Atomic element size = container_size - container_padding - tag_padding - inner_container_padding
+    // Level 3 container has padding, Level 2 tag has childPadding, Level 1 inner has childPadding
+    return Math.max(0, this.size - (2 * this.padding) - (2 * this.childPadding) - (2 * this.childPadding));
+  }
+
   // Style generators using instance properties
   getTagStyle(): React.CSSProperties {
     const calculatedRadius = this.calculateInnerRadius();
@@ -700,6 +707,26 @@ const App: React.FC = () => {
           >
           </Field>
 
+          {/* Atomic Element Size Display */}
+          <Field 
+            label={
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <span>Size</span>
+                <div style={{
+                  padding: '4px 8px',
+                  backgroundColor: tokens.colorNeutralBackground6,
+                  borderRadius: '4px',
+                  fontSize: '12px',
+                  fontWeight: '600'
+                }}>
+                  {radiusController.calculateAtomicElementSize()}px
+                </div>
+              </div>
+            }
+            style={{ marginBottom: '20px', paddingLeft: '24px', paddingRight: '24px' }}
+          >
+          </Field>
+
           {/* Export Button */}
           <div style={{ 
             marginTop: '24px', 
@@ -820,7 +847,7 @@ const App: React.FC = () => {
                   backgroundColor: tokens.colorNeutralBackground1,
                   borderRadius: `${radiusController.calculateOuterRadius()}px`,
                   flexDirection: 'column',
-                  gap: '16px',
+                  gap: '8px',
                   width: 'fit-content',
                   margin: '0 auto'
                 }}>
